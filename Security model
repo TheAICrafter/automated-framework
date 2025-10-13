@@ -1,0 +1,85 @@
+Security model
+This document describes the Zero Trust security implementation for the framework.
+
+1. Identity and authentication
+
+Service principal authentication
+
+Uses OAuth 2.0 client credentials flow.
+
+Certificate-based authentication stored in Azure Key Vault.
+
+No user credentials or connection strings embedded in client.
+
+
+
+Runtime Session
+
+Canvas App runs under a managed technical account to satisfy Power Apps runtime requirement.
+
+Technical account has minimal permissions and is protected by Conditional Access policies.
+
+
+
+
+2. Secret management
+Azure Key Vault
+
+Stores certificates/secrets for the service principal.
+
+Automated secret rotation policy (e.g., 30-day rotation).
+
+Access restricted to Azure Function via managed identity.
+
+
+3. Access control
+Conditional access
+
+Applied at token issuance time.
+
+Checks device compliance, location, and real-time risk signals.
+
+Blocks non-compliant or risky requests.
+
+Least Privilege Permissions
+
+Service principal granted only necessary Graph, SharePoint, or Dataverse application permissions.
+
+API scopes limited to data operations required by the app.
+
+
+
+
+4. Audit and monitoring
+Entra ID Sign-In Logs
+
+All service principal token requests logged.
+
+Logs include timestamp, application ID, and resource scopes.
+
+Microsoft Purview / Sentinel
+
+Ingests audit events for data access, token issuance, and policy enforcement.
+
+Real-time alerting for unusual token usage or access patterns.
+
+Retention and Reporting
+
+Audit logs retained according to compliance requirements (e.g., 1 year).
+
+Automated reports generated for security reviews and audits.
+
+
+
+5. Compliance Alignment
+GDPR
+
+No personal user credentials on shared devices.
+
+All data access events recorded with service principal identity.
+
+HIPAA
+
+PHI access audited end-to-end.
+
+Technical safeguards enforced throug
