@@ -1,4 +1,4 @@
-# 🚀 Power Platform Kiosk Authentication Framework
+# 🚀 Low-code automated authentication framework
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Azure](https://img.shields.io/badge/Azure-Functions%20%7C%20KeyVault-blue)](https://azure.microsoft.com)
@@ -6,7 +6,7 @@
 
 > **The first comprehensive solution for automated user authentication in Microsoft Power Platform environments**
 
-## 🎯 Problem Solved
+## 🎯 Problem solved
 
 Microsoft's documentation states: *"There's no official way to completely bypass Azure AD authentication for a Power App in kiosk mode"*
 
@@ -28,18 +28,18 @@ User → Canvas app → Custom connector → Azure Functions → Key vault → M
 
 [Architecture Diagram](docs/architecture-overview.png)
 
-## 📈 Business Impact
+## 📈 Business impact
 
 | Metric | Before | After | Improvement |
 |--------|--------|-------|-------------|
-| Authentication Time | 15-30s | 0s | **100% reduction** |
-| IT Support Tickets | Baseline | -60-80% | **Major reduction** |
+| Authentication time | 15-30s | 0s | **100% reduction** |
+| IT Support tickets | Baseline | -60-80% | **Major reduction** |
 | Credential Incidents | 2-4% monthly | 0% | **Eliminated** |
 
-## 🎯 Use Cases
+## 🎯 Use cases
 
 - **Healthcare**: Patient check-in kiosks, nursing stations
-- **Public Services**: Citizen terminals, information displays  
+- **Public services**: Citizen terminals, information displays  
 - **Enterprise**: Manufacturing floors, warehouse management
 - **Retail**: Point-of-service, customer lookup systems
 
@@ -50,7 +50,7 @@ User → Canvas app → Custom connector → Azure Functions → Key vault → M
 - Azure subscription (Functions, Key Vault)
 - Intune for device management (recommended)
 
-## 🚀 Quick Start
+## 🚀 Quick start
 
 See our [Getting Started Guide](docs/getting-started.md) for implementation overview.
 
@@ -63,17 +63,17 @@ See our [Getting Started Guide](docs/getting-started.md) for implementation over
 - [🔒 Security Model](docs/security-model.md) - Zero Trust implementation
 - [💼 Use Cases](docs/use-cases.md) - Real-world applications
 
-## 🤝 Professional Services
+## 🤝 Professional sServices
 
 For production implementation, enterprise deployment, or custom adaptations:
 
-- 📧 Email: johnny@yourdomain.com
-- 💼 LinkedIn: [Your LinkedIn]
-- 📅 Book consultation: [Calendar link]
+- 📧 Email: johnny.johansson@live.com
+- 💼 LinkedIn: https://www.linkedin.com/in/johnny-johansson-vbg/
+- 📅 Book consultation by sending me an email at johnny.johansson@live.com
 
 ## ⭐ Recognition
 
-- First documented solution for Power Platform kiosk authentication
+- First documented automatedsolution for Microsoft platform authentication
 - Addresses multi-year community demand with no existing alternatives
 - Enterprise-grade security without authentication friction
 
@@ -81,6 +81,4 @@ For production implementation, enterprise deployment, or custom adaptations:
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
----
 
-**Built with ❤️ for the Power Platform community**
