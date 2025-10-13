@@ -1,81 +1,71 @@
-🔒 Security Model
-This document outlines the Zero Trust security implementation for the Automated Kiosk Authentication Framework.
+# 🔒 **Security model**
 
-1️⃣ Identity & Authentication
-🔑 Service Principal Authentication
+This document outlines the **Zero Trust** security implementation for the automated authentication framework.
 
-Uses OAuth 2.0 client credentials flow
+---
 
-Certificate-based credentials stored in Azure Key Vault
+## 1️⃣ **Identity & authentication**
 
-No user credentials or connection strings in client apps
+**🔑 Service Principal Authentication**  
+- **Uses OAuth 2.0 client credentials flow**  
+- **Certificate-based** credentials stored in Azure Key Vault  
+- **No user credentials** or connection strings in client apps  
 
-🛡️ Runtime Session
+**🛡️ Runtime session**  
+- **Canvas App runs under a managed technical account**  
+- Technical account granted **minimal permissions**  
+- Protected by **Conditional Access** policies  
 
-Canvas App runs under a managed technical account
+---
 
-Technical account granted minimal permissions
+## 2️⃣ **Secret management**
 
-Protected by Conditional Access policies
+**🔐 Azure Key Vault**  
+- **Stores all certificates/secrets** for service principals  
+- **Automated rotation** policy (e.g., **30-day** rotation)  
+- Access restricted to backend service via **managed identity**  
 
-2️⃣ Secret Management
-🔐 Azure Key Vault
+---
 
-Stores all certificates/secrets for service principals
+## 3️⃣ **Access control**
 
-Automated rotation policy (e.g., 30-day rotation)
+**🕹️ Conditional Access**  
+- **Enforced at token issuance**  
+- Validates **device compliance**, **location**, and **real-time risk signals**  
+- **Blocks** non-compliant or risky requests  
 
-Access restricted to backend service via managed identity
+**🔒 Least-Privilege permissions**  
+- Service principal granted **only necessary API permissions**  
+- **Scopes limited** to required data operations (Graph, SharePoint, Dataverse)  
 
-3️⃣ Access Control
-🕹️ Conditional Access
+---
 
-Enforced at token issuance
+## 4️⃣ **Audit & monitoring**
 
-Validates device compliance, location, and real-time risk signals
+**📋 Entra ID sign-in logs**  
+- Logs every **service principal token request**  
+- Includes **timestamp**, **application ID**, and **resource scopes**  
 
-Blocks non-compliant or risky requests
+**🚨 Microsoft Purview / Sentinel**  
+- **Ingests audit events** for data access, token issuance, and policy enforcement  
+- **Real-time alerts** on unusual activity or policy violations  
 
-🔒 Least-Privilege Permissions
+**📊 Retention & reporting**  
+- Audit logs retained per **compliance requirements** (e.g., **1 year**)  
+- **Automated reports** generated for security reviews and audits  
 
-Service principal granted only necessary API permissions
+---
 
-Scopes limited to required data operations (Graph, SharePoint, Dataverse)
+## 5️⃣ **Compliance alignment**
 
-4️⃣ Audit & Monitoring
-📋 Entra ID Sign-In Logs
+**🌍 GDPR**  
+- **No personal user credentials** on shared devices  
+- All data-access events recorded under **service principal identity**  
 
-Logs every service principal token request
+**🏥 HIPAA**  
+- **PHI access audited end-to-end**  
+- Technical safeguards via **Conditional Access** and secure key management  
 
-Includes timestamp, application ID, and resource scopes
-
-🚨 Microsoft Purview / Sentinel
-
-Ingests audit events for data access, token issuance, and policy enforcement
-
-Real-time alerts on unusual activity or policy violations
-
-📊 Retention & Reporting
-
-Audit logs retained per compliance requirements (e.g., 1 year)
-
-Automated reports generated for security reviews and audits
-
-5️⃣ Compliance Alignment
-🌍 GDPR
-
-No personal user credentials on shared devices
-
-All data-access events recorded under service principal identity
-
-🏥 HIPAA
-
-PHI access audited end-to-end
-
-Technical safeguards via Conditional Access and secure key management
-
-🔐 SOC 2
-
-Continuous monitoring and evidence collection
-
-Formal change control for secret rotation and policy updates
+**🔐 SOC 2**  
+- **Continuous monitoring** and evidence collection  
+- **Formal change control** for secret rotation and policy updates  
