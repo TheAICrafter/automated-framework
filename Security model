@@ -1,85 +1,84 @@
-Security model
-This document describes the Zero Trust security implementation for the framework.
-
-1. Identity and authentication
-
-Service principal authentication
-
-Uses OAuth 2.0 client credentials flow.
-
-Certificate-based authentication stored in Azure Key Vault.
-
-No user credentials or connection strings embedded in client.
+🔒 Security model
+This document outlines the Zero Trust security implementation for the Automated Kiosk Authentication Framework.
 
 
 
-Runtime Session
+🔑 Identity & authentication
 
-Canvas App runs under a managed technical account to satisfy Power Apps runtime requirement.
+Service Principal Authentication
 
-Technical account has minimal permissions and is protected by Conditional Access policies.
+Uses OAuth 2.0 client credentials flow
 
+Certificate-based credentials stored in Azure Key Vault
 
+No user credentials or connection strings in client apps
 
+🛡️ Runtime Session
 
-2. Secret management
-Azure Key Vault
+Canvas App runs under a minimal managed tech account
 
-Stores certificates/secrets for the service principal.
+Technical account granted minimal permissions
 
-Automated secret rotation policy (e.g., 30-day rotation).
+Protected by Conditional access policies
 
-Access restricted to Azure Function via managed identity.
+2️⃣ Secret Management
+🔐 Azure Key Vault
 
+Stores all certificates/secrets for service principals
 
-3. Access control
-Conditional access
+Automated rotation policy (e.g., every 30 days)
 
-Applied at token issuance time.
+Access restricted to backend service via managed identity
 
-Checks device compliance, location, and real-time risk signals.
+3️⃣ Access Control
+🕹️ Conditional Access
 
-Blocks non-compliant or risky requests.
+Enforced at token issuance
 
-Least Privilege Permissions
+Validates device compliance, location, and real-time risk signals
 
-Service principal granted only necessary Graph, SharePoint, or Dataverse application permissions.
+Blocks non-compliant or risky token requests
 
-API scopes limited to data operations required by the app.
+🔒 Least-Privilege Permissions
 
+Service principal granted only necessary API permissions
 
+Scopes limited to required data operations (Graph, SharePoint, Dataverse)
 
+4️⃣ Audit & Monitoring
+📋 Entra ID Sign-In Logs
 
-4. Audit and monitoring
-Entra ID Sign-In Logs
+Logs every service principal token request
 
-All service principal token requests logged.
+Includes timestamp, application ID, and resource scopes
 
-Logs include timestamp, application ID, and resource scopes.
+🚨 Microsoft Purview / Sentinel
 
-Microsoft Purview / Sentinel
+Ingests audit events for data access and token issuance
 
-Ingests audit events for data access, token issuance, and policy enforcement.
+Real-time alerts on unusual activity or policy violations
 
-Real-time alerting for unusual token usage or access patterns.
+📊 Retention & Reporting
 
-Retention and Reporting
+Logs retained per compliance requirements (e.g., 1 year)
 
-Audit logs retained according to compliance requirements (e.g., 1 year).
+Automated reports generated for security reviews and audits
 
-Automated reports generated for security reviews and audits.
+5️⃣ Compliance Alignment
+🌍 GDPR
 
+No personal user credentials on shared devices
 
+All data-access events recorded under service principal identity
 
-5. Compliance Alignment
-GDPR
+🏥 HIPAA
 
-No personal user credentials on shared devices.
+PHI access audited end-to-end
 
-All data access events recorded with service principal identity.
+Technical safeguards via Conditional Access and secure key management
 
-HIPAA
+🔐 SOC 2
 
-PHI access audited end-to-end.
+Continuous monitoring and evidence collection
 
-Technical safeguards enforced throug
+Formal change control for secret rotation and policy updates
