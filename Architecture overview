@@ -1,0 +1,25 @@
+High-level architecture overview
+
+User Interface
+A low-code front end provides the user UI. It operates under a standard service account session managed by your existing identity platform.
+
+Integration gateway
+A lightweight connector within your low-code environment routes all data requests to backend services. No secrets or credentials are stored in the front end.
+
+Backend authentication service
+A single, centralized service handles all token acquisition and renewal. It obtains and caches short-lived access tokens on behalf of the front end.
+
+Secure secret store
+Cryptographic keys and credentials are kept in a hardened, policy-enforced vault. Rotation and access policies are managed centrally, out of reach from client components.
+
+Identity & policy enforcement
+Your identity provider issues tokens only to authorized services and enforces conditional access policies. This ensures each data request meets your Zero Trust controls.
+
+Data endpoints
+All enterprise APIs (e.g. data, content, workflows) are invoked with managed service credentials. This protects user-facing components from direct API access.
+
+Governance & audit
+Every authentication and data-access event is captured in your central logging platform. Compliance, monitoring and alerting are applied without client-side dependencies.
+
+High-level flow:
+User interacts with the UI → Integration gateway forwards request → Backend auth service obtains a token → Secure secret store validates credentials → Identity provider issues service token → Data endpoint returns the response → Governance platform logs all actions
