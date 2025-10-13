@@ -1,11 +1,8 @@
-🔒 Security model
+🔒 Security Model
 This document outlines the Zero Trust security implementation for the Automated Kiosk Authentication Framework.
 
-
-
-🔑 Identity & authentication
-
-Service Principal Authentication
+1️⃣ Identity & Authentication
+🔑 Service Principal Authentication
 
 Uses OAuth 2.0 client credentials flow
 
@@ -15,11 +12,11 @@ No user credentials or connection strings in client apps
 
 🛡️ Runtime Session
 
-Canvas App runs under a minimal managed tech account
+Canvas App runs under a managed technical account
 
 Technical account granted minimal permissions
 
-Protected by Conditional access policies
+Protected by Conditional Access policies
 
 2️⃣ Secret Management
 🔐 Azure Key Vault
