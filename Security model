@@ -23,7 +23,7 @@ Protected by Conditional Access policies
 
 Stores all certificates/secrets for service principals
 
-Automated rotation policy (e.g., every 30 days)
+Automated rotation policy (e.g., 30-day rotation)
 
 Access restricted to backend service via managed identity
 
@@ -34,7 +34,7 @@ Enforced at token issuance
 
 Validates device compliance, location, and real-time risk signals
 
-Blocks non-compliant or risky token requests
+Blocks non-compliant or risky requests
 
 🔒 Least-Privilege Permissions
 
@@ -51,13 +51,13 @@ Includes timestamp, application ID, and resource scopes
 
 🚨 Microsoft Purview / Sentinel
 
-Ingests audit events for data access and token issuance
+Ingests audit events for data access, token issuance, and policy enforcement
 
 Real-time alerts on unusual activity or policy violations
 
 📊 Retention & Reporting
 
-Logs retained per compliance requirements (e.g., 1 year)
+Audit logs retained per compliance requirements (e.g., 1 year)
 
 Automated reports generated for security reviews and audits
 
