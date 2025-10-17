@@ -27,7 +27,7 @@ This framework eliminates all three problems.
 Universal Zero-Login Experience
 Every device—shared kiosks, personal smartphones, admin consoles—authenticates automatically via Intune DeviceID:
 
-text
+
 ✓ Public kiosks: No login required
 ✓ Personal mobile devices: No login required  
 ✓ Shared tablets: No login required
