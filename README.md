@@ -271,29 +271,6 @@ cd automated-framework/docs
 
 ---
 
-## 🤝 Professional Services
-
-### **Pilot Implementation**
-**$25,000 | 6 weeks**
-- 10-25 devices
-- Proof of concept
-- Security validation
-- Compliance audit prep
-
-### **Enterprise Deployment**
-**$60,000 | 12 weeks**
-- 50-200 devices
-- Full production implementation
-- Custom integrations
-- Staff training
-
-### **Managed Services**
-**$5K-15K/month**
-- 24/7 monitoring
-- Incident response
-- Certificate management
-- Quarterly compliance reports
-
 ### **Contact**
 
 - 📧 **Email:** [johnny.johansson@live.com](mailto:johnny.johansson@live.com)
@@ -384,7 +361,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ### ⭐ Star this repository if you find it valuable!
 
-**Built with ❤️ for the Power Platform community**
 
 *Eliminating authentication friction while strengthening enterprise security*
 
