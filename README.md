@@ -133,20 +133,13 @@ Microsoft APIs (Graph, SharePoint, Dataverse)
 | **Credential Rotation** | Manual, quarterly | Automated, 30-day | **$2,400/year** |
 | **Compliance Audit Prep** | 80 hours | 10 hours | **$21K/year** |
 
-### **ROI Example (100 Devices)**
-
-**Investment Year 1:**
-- Implementation: $60,000 (8-12 weeks)
-- Annual Operating: $36,000 ($3K/month Azure + licensing)
-- **Total: $96,000**
-
-**Benefits Year 1:**
-- Compliance violation avoidance: $100K-500K
-- Security breach prevention: $2.7M (risk reduction)
-- IT operational savings: $60,400
-- **Total: $160K-560K**
-
-**ROI: 67%-483% | Payback: 2-7 months**
+Category                    |  Calculation                                                 |  Annual Amount (USD)
+----------------------------+--------------------------------------------------------------+---------------------
+Kiosk Productivity Savings  |  1 auth/day × 250 days × 5 min/day × 50 USD/hr × 10 devices  |  6,944              
+Staff Productivity Savings  |  2 auth/day × 250 days × 5 min/day × 50 USD/hr × 10 devices  |  13,889             
+IT Support Savings          |  2 tickets/mo × 10 devices × 70 USD × 12 mo                  |  16,800             
+Operating Cost              |  30 USD/device/mo × 10 devices × 12 mo                       |  –3,600             
+Net Annual Savings          |  6,944 + 13,889 + 16,800 – 3,600                             |  33,033             
 
 ---
 
