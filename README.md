@@ -20,7 +20,9 @@
 
 Organizations deploying Microsoft Power Platform face an impossible authentication challenge:
 
-> **Microsoft's documentation states:** *"There's no official way to completely bypass Azure AD authentication for a Power App in kiosk mode"*
+> **Microsoft said it couldn’t be done yet here we are with a fully functional, enterprise-grade level automated authentication framework that eliminates the need of user interactive logins. 
+Authentication friction remains the final barrier in digital transformation. While applications, workflows, and data have achieved near-complete automation, users still waste countless hours managing credentials across systems - especially in shared environments like healthcare terminals, public kiosks, and field operations.
+*
 
 This creates three bad options:
 
@@ -84,20 +86,20 @@ Device-to-user mapping maintains traceability:
 ### **High-Level Flow**
 
 ```
-Device Layer (Intune-enrolled devices)
+Device layer (Intune-enrolled devices)
     ↓
-Power Apps Runtime (Technical Account)
+Power apps runtime (service accounts)
     ↓
-Custom Connector (Device-Aware Gateway)
+Custom connector (Device-aware gateway)
     ↓
-Azure Functions (Token Broker)
+Azure functions (token broker)
     ↓
-Azure Key Vault (Certificate Storage)
+Vault (Certificate Storage)
     ↓
-Entra ID + Conditional Access
+Entra ID + conditional access
     ↓
-Microsoft APIs (Graph, SharePoint, Dataverse)
-```
+APIs (Graph, SharePoint, Dataverse)
+
 
 ### **Key Components**
 
@@ -123,15 +125,6 @@ Microsoft APIs (Graph, SharePoint, Dataverse)
 | **Shared Credentials** | 79% of devices | 0% | ✅ **HIPAA/PCI DSS compliant** |
 | **Compliance Violations** | Shared account logs | Device-level traceability | ✅ **Audit-ready** |
 | **Pentest Failures** | Token extraction possible | Impossible | ✅ **Security hardened** |
-
-### **Operational Excellence**
-
-| Metric | Before | After | Annual Savings |
-|--------|--------|-------|----------------|
-| **Authentication Time** | 15-30s per session | 0s | **$40K-80K** |
-| **IT Support Tickets** | 45/month (auth issues) | 0/month | **$37K/year** |
-| **Credential Rotation** | Manual, quarterly | Automated, 30-day | **$2,400/year** |
-| **Compliance Audit Prep** | 80 hours | 10 hours | **$21K/year** |
 
 
 
@@ -219,57 +212,10 @@ Microsoft APIs (Graph, SharePoint, Dataverse)
 | **GDPR** | Processing activity records | ✅ Complete device + action + user logs |
 | **ISO 27001** | Individual accountability | ✅ Device enrollment + audit trail |
 
-**[Read Complete Security Model →](docs/security-model.md)**
 
 ---
 
-## 🚀 Quick Start
 
-### **Prerequisites**
-
-- Microsoft 365 with Entra ID Premium P1 (P2 recommended)
-- Power Platform environment (Production)
-- Azure subscription (Functions, Key Vault, Monitor)
-- Microsoft Intune (device enrollment & compliance)
-
-### **Implementation Timeline**
-
-| Phase | Duration | Activities |
-|-------|----------|------------|
-| **Foundation** | Week 1-2 | Service principals, Key Vault, Intune setup |
-| **Backend** | Week 3-4 | Azure Functions, Custom Connector development |
-| **Security** | Week 5-6 | Conditional Access, Sentinel configuration |
-| **Integration** | Week 7-8 | Power Platform integration, testing |
-| **Rollout** | Week 9-12 | Pilot → Full production deployment |
-
-### **Get Started**
-
-```bash
-# Clone repository
-git clone https://github.com/TheAICrafter/automated-framework.git
-
-# Review documentation
-cd automated-framework/docs
-```
-
-**[Full Implementation Guide →](docs/implementation-guide.md)**
-
----
-
-## 📚 Documentation
-
-| Document | Description |
-|----------|-------------|
-| 📄 **[Complete Whitepaper](docs/whitepaper.md)** | 40-page technical deep dive |
-| 🏗️ **[Architecture Guide](docs/architecture-guide.md)** | System design patterns and data flows |
-| 🔒 **[Security Model](docs/security-model.md)** | Zero Trust implementation details |
-| 📋 **[Compliance Mapping](docs/compliance-mapping.md)** | HIPAA, GDPR, PCI DSS, ISO 27001 |
-| 💼 **[Use Cases](docs/use-cases.md)** | Real-world deployment scenarios |
-| ⚙️ **[Implementation Guide](docs/implementation-guide.md)** | Step-by-step setup instructions |
-| 🔧 **[API Reference](docs/api-reference.md)** | Azure Functions endpoints |
-| 📊 **[Monitoring Guide](docs/monitoring-guide.md)** | Sentinel queries and dashboards |
-
----
 
 ### **Contact**
 
@@ -295,47 +241,7 @@ cd automated-framework/docs
 - Enables HIPAA/PCI DSS-compliant Power Platform deployments
 - Published comprehensive whitepaper for community benefit
 
-### **Technical Innovation**
 
-**Problem:** Microsoft's documented limitation + No official solution
-
-**Innovation:** Device-based authentication + Backend identity brokering + Zero Trust compliance + Individual accountability
-
-**Result:** Enterprise-grade security + Zero authentication friction + Compliance-ready architecture
-
----
-
-## 🛠️ Technology Stack
-
-**Core Platform:**  
-![Power Platform](https://img.shields.io/badge/Power_Platform-742774?style=for-the-badge&logo=powerapps&logoColor=white) ![Azure Functions](https://img.shields.io/badge/Azure_Functions-0062AD?style=for-the-badge&logo=azurefunctions&logoColor=white) ![Azure Key Vault](https://img.shields.io/badge/Azure_Key_Vault-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
-
-**Security & Identity:**  
-![Entra ID](https://img.shields.io/badge/Entra_ID-0078D4?style=for-the-badge&logo=microsoft&logoColor=white) ![Intune](https://img.shields.io/badge/Microsoft_Intune-0078D4?style=for-the-badge&logo=microsoft&logoColor=white) ![Conditional Access](https://img.shields.io/badge/Conditional_Access-success?style=for-the-badge&logo=security&logoColor=white)
-
-**Monitoring & Operations:**  
-![Application Insights](https://img.shields.io/badge/Application_Insights-68217A?style=for-the-badge&logo=azure-devops&logoColor=white) ![Microsoft Sentinel](https://img.shields.io/badge/Microsoft_Sentinel-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
-
----
-
-## 🤝 Contributing
-
-Contributions welcome for:
-
-- 📝 Documentation improvements
-- 🎯 Additional use case scenarios
-- 🔒 Security hardening recommendations
-- 🔧 Integration pattern examples
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
----
-
-## 📜 License
-
-**MIT License** - see [LICENSE](LICENSE) file for details.
-
-**Commercial Implementation:** Full production-ready implementation, enterprise deployment support, and custom adaptations available through professional services.
 
 ---
 
