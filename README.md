@@ -28,9 +28,9 @@ This creates three bad options:
 
 | Option | Problem |
 |--------|---------|
-| **Shared Credentials** | HIPAA violations, no accountability, compliance failures |
-| **Manual Login** | 15-30s friction per session, workflow disruption, user frustration |
-| **Embedded Credentials** | Security vulnerabilities, pentest failures, credential exposure |
+| **Shared credentials** | HIPAA violations, no accountability, compliance failures |
+| **Manual login** | 15-30s friction per session, workflow disruption, user frustration |
+| **Embedded credentials** | Security vulnerabilities, pentest failures, credential exposure |
 
 **This framework eliminates them all.**
 
