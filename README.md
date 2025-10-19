@@ -22,7 +22,7 @@ Organizations deploying Microsoft Power Platform face an impossible authenticati
 
 > **Microsoft said it couldn’t be done yet here we are with a fully functional, enterprise-grade level automated authentication framework that eliminates the need of user interactive logins. 
 Authentication friction remains the final barrier in digital transformation. While applications, workflows, and data have achieved near-complete automation, users still waste countless hours managing credentials across systems - especially in shared environments like healthcare terminals, public kiosks, and field operations.
-*
+
 
 This creates three bad options:
 
