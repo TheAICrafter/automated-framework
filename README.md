@@ -36,9 +36,9 @@ This creates three bad options:
 
 ---
 
-## ✨ What Makes This Revolutionary
+## ✨ What makes this revolutionary
 
-### 🎯 **Universal Zero-Login Experience**
+### 🎯 **Universal zero-login experience**
 
 Every device—shared kiosks, personal smartphones, admin consoles—authenticates **automatically** via Intune DeviceID:
 
