@@ -1,198 +1,83 @@
 <div align="center">
+🚀 Enterprise Device-Based Authentication Framework
+The world’s first zero-touch, fully compliant authentication solution for Microsoft Power Platform
+[
+[
+[
+[
+[
 
-# 🚀 Enterprise Device-Based Authentication Framework
-
-### *The first comprehensive solution for automated authentication in Microsoft Power Platform*
-
-[!License: MIT](https://opensource.org/licenses/MIT)
-[!Azure](https://azure.microsoft.com)
-[!Power Platform](https://powerplatform.microsoft.com)
-[!Intune](https://www.microsoft.com/microsoft-365/enterprise-mobility-security/microsoft-intune)
-[!Security](https://www.microsoft.com/security/zero-trust)
-
-**Documentation** • **Whitepaper** • **Architecture** • **Get Started**
+Documentation - Architecture - Get Started
 
 </div>
+🔥 Why This Changes Everything
+Every organization using Power Platform hits the same wall:
 
----
+Manual logins, shared credentials, and exposed PII
+kill productivity, breach compliance, and invite pentests to fail.
 
-## 📖 Overview
+This framework obliterates that barrier with:
 
-Organizations deploying Microsoft Power Platform face an impossible authentication challenge:
+Zero manual logins on any device
 
-> **Microsoft said it couldn’t be done yet here we are with a fully functional, enterprise-grade level automated authentication framework that eliminates the need of user interactive logins. 
-Authentication friction remains the final barrier in digital transformation. While applications, workflows, and data have achieved near-complete automation, users still waste countless hours managing credentials across systems - especially in shared environments like healthcare terminals, public kiosks, and field operations.
-*
+Zero credentials in the client
 
+Zero PII exposure in apps
 
----
+Enterprise-grade security
 
+GDPR, HIPAA, PCI DSS, ISO 27001 compliance
 
+All built on native Azure, Intune, Entra ID, and Power Platform—no external servers.
 
-### 🎯 **Universal zero-login experience**
+🚀 Core Innovations
+Zero-Touch Device Authentication
+Devices enrolled in Intune auto-authenticate—no user input ever required.
 
-Every device—shared kiosks, personal smartphones, admin consoles—authenticates **automatically** via Intune DeviceID:
+Backend Credential & PII Broker
+All secrets and sensitive data operations live entirely in Azure Functions + Key Vault.
 
-- ✅ Public kiosks: No login required
-- ✅ Personal mobile devices: No login required  
-- ✅ Shared tablets: No login required
-- ✅ Admin workstations: No login required
+Device-Level Accountability
+Every action logs DeviceID + User + Timestamp + Action—complete audit trail.
 
-### 👤 **Individual Accountability Without User Login**
+Compliance-First by Design
+Pseudonymized PII, encrypted token brokering, policy-driven access, and real-time monitoring.
 
-Device-to-user mapping maintains traceability:
+📈 Transformational Impact
+Challenge	Outcome
+Manual logins on shared devices	Eliminated
+Credentials exposed in .msapp files	Zero exposure
+Clear-text PII in apps/dataverse	Fully pseudonymized
+BankID integration blocked by IT	Seamless, secure verification
+Pentest failures from secret leaks	Pentest-ready architecture
+Shared accounts & audit gaps	Device-based traceability
+💡 Real-World Use Cases
+Healthcare: Nurses access patient records instantly on shared tablets—HIPAA-audit ready.
 
-```json
-{
-  "device": "iPhone-JohnDoe",
-  "deviceId": "xyz-789-ghi-012",
-  "primaryUser": "john.doe@company.com",
-  "action": "UpdateBooking",
-  "timestamp": "2025-10-18T00:20:15Z",
-  "compliance": "Device compliant, corporate WiFi"
-}
-```
+Finance: KYC & BankID flows protected end-to-end—PCI DSS compliant.
 
-**Audit question:** *"Who updated booking #12345?"*  
-**Answer:** Device iPhone-JohnDoe (owned by john.doe@company.com) at 00:20:15
+Public Sector: Citizen kiosks with zero login friction—GDPR-safe.
 
-### 🔒 **Zero credential exposure**
+Field Services: Technicians save hours/month—no more login delays.
 
-**Canvas App Contains:**
-- ❌ NO connection strings
-- ❌ NO OAuth tokens
-- ❌ NO client secrets
-- ❌ NO certificates
-- ✅ ONLY Custom Connector endpoint (HTTPS)
+Retail & Manufacturing: Store tablets & shop-floor PCs run with no shared passwords—ISO 27001 aligned.
 
-**All credentials secured in:**
-- ✅ Vault (certificate-based service principals)
-- ✅ Managed Identity (no credentials in code)
-- ✅ Backend token brokering (tokens never reach client)
+🛠️ Quickstart
+Clone this repo
 
----
+Review [docs/architecture-guide.md]
 
-## 🎯 Use cases
+Follow [docs/getting-started.md]
 
-### 🏥 Healthcare
+Deploy in your tenant and onboard first devices
 
-**Challenge:** 79% of shared healthcare devices use compromised credentials
+📞 Contact & Licensing
+For commercial licensing, pilots, and enterprise support:
 
-**Solution:**
-- Mobile nursing tablets auto-authenticated
-- Patient check-in kiosks (no login)
-- HIPAA § 164.308 compliant (device-level identification)
+✉️ johnny.johansson@live.com
 
-**Result:** Zero authentication friction, HIPAA audit-ready, $1.1M annual savings
-
----
-
-### 🔧 Field Services
-
-**Challenge:** Technicians lose 3-5 minutes/day on authentication
-
-**Solution:**
-- Smartphone work order apps (instant access)
-- Offline-capable with device tokens
-- Every action tied to device + user
-
-**Result:** 100% elimination of login delays, 60% reduction in IT tickets
-
----
-
-
----
-
-### 🏪 Retail
-
-**Challenge:** Store manager iPads with shared credentials
-
-**Solution:**
-- Inventory management apps (no login)
-- Point-of-service lookups (instant access)
-- PCI DSS compliant (no shared credentials)
-
-**Result:** Eliminated audit failure risk, 75% reduction in password issues
-
-
----
-
-## 🔒 Security & compliance
-
-### **Zero trust architecture**
-
-✅ **Verify explicitly**
-- Device compliance validated via API
-- Certificate-based service principal authentication
-
-✅ **Use least privilege**
-- Device-role-based permissions (not user-based)
-- Backend enforcement (no client-side bypass)
-- Granular API scopes per service principal
-
-✅ **Assume breach**
-- Real-time anomaly detection (Microsoft Sentinel)
-- Automated incident response (token revocation)
-- Immutable audit logs (Log Analytics)
-
-### **Compliance frameworks**
-
-| Framework | Requirement | Our Solution |
-|-----------|------------|--------------|
-| **HIPAA** | Unique user identification | ✅ Device-level traceability with user mapping |
-| **PCI DSS** | No shared credentials | ✅ Device-based authentication, zero shared accounts |
-| **GDPR** | Processing activity records | ✅ Complete device + action + user logs |
-| **ISO 27001** | Individual accountability | ✅ Device enrollment + audit trail |
-
-
----
-
-
-
-### **Contact**
-
-- 📧 **Email:** johnny.johansson@live.com
-- 💼 **LinkedIn:** Johnny Johansson
-- 📅 **Consultation:** Email for availability
-
----
-
-
-
-### **Industry firsts**
-
-✅ First documented device-based authentication solution for Microsoft Power Platform  
-✅ First backend token brokering architecture eliminating client-side credentials  
-✅ First framework providing device-level traceability with user accountability  
-✅ Addresses documented Microsoft limitation with no existing alternatives
-
-### **Community impact**
-
-- Solves multi-year community problem (hundreds of forum posts)
-- Eliminates shared credential compliance violations
-- Enables HIPAA/PCI DSS-compliant Power Platform deployments
-- Published comprehensive whitepaper for community benefit
-
-
-
----
-
-## 🔗 Related resources
-
-- Microsoft Power Platform Documentation
-- Azure Functions Documentation
-- Microsoft Intune Documentation
-- Zero Trust Security Model
-
----
-
-## 📞 Support
-
-- **Issues:** GitHub Issues
-- **Discussions:** GitHub Discussions
-- **Email:** johnny.johansson@live.com
-- **LinkedIn:** Professional Network
-
----
+🔗 linkedin.com/in/johnny-johansson-vbg
 
 <div align="center">
+⭐ Star this repo if you’re ready to eliminate authentication friction and harden security!
+</div>
