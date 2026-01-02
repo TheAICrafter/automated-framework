@@ -95,33 +95,7 @@ Device-to-user mapping maintains traceability:
 
 
 
-## 🎯 Use cases
 
-### 🏥 Healthcare
-
-**Challenge:** 79% of shared healthcare devices use compromised credentials
-
-**Solution:**
-- Mobile nursing tablets auto-authenticated
-- Patient check-in kiosks (no login)
-- HIPAA § 164.308 compliant (device-level identification)
-
-**Result:** Zero authentication friction, HIPAA audit-ready
-
----
-
-### 🔧 Field Services
-
-**Challenge:** Technicians lose 3-5 minutes/day on authentication
-
-**Solution:**
-- Smartphone work order apps (instant access)
-- Offline-capable with device tokens
-- Every action tied to device + user
-
-**Result:** 100% elimination of login delays, 60% reduction in IT tickets
-
----
 
 ### 🏭 Manufacturing
 
@@ -134,21 +108,6 @@ Device-to-user mapping maintains traceability:
 
 **Result:** Zero workflow interruption, compliance certification, productivity recovery
 
----
-
-### 🏪 Retail
-
-**Challenge:** Store manager iPads with shared credentials
-
-**Solution:**
-- Inventory management apps (no login)
-- Point-of-service lookups (instant access)
-- PCI DSS compliant (no shared credentials)
-
-**Result:** Eliminated audit failure risk, 75% reduction in password issues
-
-
----
 
 ## 🔒 Security & compliance
 
@@ -185,35 +144,8 @@ Device-to-user mapping maintains traceability:
 ### **Contact**
 
 - 📧 **Email:** johnny.johansson@live.com
-- 💼 **LinkedIn:** Johnny Johansson
-- 📅 **Consultation:** Email for availability
 
----
 
-## ⭐ Recognition & Impact
-
-### **Industry firsts**
-
-✅ First documented device-based authentication solution for Microsoft Power Platform  
-✅ First backend token brokering architecture eliminating client-side credentials  
-✅ First framework providing device-level traceability with user accountability  
-✅ Addresses documented Microsoft limitation with no existing alternatives
-
-### **Community impact**
-
-- Solves multi-year community problem (hundreds of forum posts)
-- Eliminates shared credential compliance violations
-- Enables HIPAA/PCI DSS-compliant Power Platform deployments
-- Published comprehensive whitepaper for community benefit
-
----
-
-## 🔗 Related Resources
-
-- Microsoft Power Platform Documentation
-- Azure Functions Documentation
-- Microsoft Intune Documentation
-- Zero Trust Security Model
 
 ---
 
